@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   #get 'books/edit'
   devise_for :users
 
-  resources :books#, only: [:create, :index, :show, :edit, :update, :destroy ]
+  resources :books, only: [:create, :index, :show, :edit, :update, :destroy ]
 
-  resources :users#, only: [:index, :show, :edit,  ]
+  resources :users, only: [:index, :show, :edit,  ]
   
   root to: "homes#top"
   
