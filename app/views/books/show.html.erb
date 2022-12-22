@@ -1,13 +1,15 @@
-<h1>Books#show</h1>
+<%= render 'users/list', user: @user, book: @new_book %>
 
 
-<h2>Book detail</h2>
-<table>
-    <tbody>
-      <tr>
-        <td>
+<div class="col-md-8 offset-md-1">
+  
+  <h2>Book detail</h2>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>
           <%= link_to user_path(@book.user.id) do %>
-            <%= image_tag @book.user.get_profile_image(100, 100) %><br>
+            <%= image_tag @book.user.get_profile_image(80, 80) %><br>
             <%= @book.user.name %>
           <% end %>
         </td>
@@ -19,12 +21,15 @@
         <td>
           <%= @book.body %>
         </td>
+
         <td>
-          <%= link_to 'Edit', edit_book_path(@book.id) %>
+          <%= link_to "Edit", edit_book_path(@book.id), :class=>"btn btn-success" %>
         </td>
         <td>
-          <%= link_to 'Destroy', book_path(@book.id), method: :delete %>
+          <%= link_to "Destroy", book_path(@book.id), method: :delete, :class=>"btn btn-sm btn-danger destroy_book_261" %>
         </td>
+        
+  
       </tr>
     </tbody>
 </table>
