@@ -1,6 +1,14 @@
 <%= render 'users/list', user: @user, book: @new_book %>
 
-
+  <p id ="notice"></p>
+  <% if @new_book.errors.any? %>
+  <%= @new_book.errors.count %>errors prohibited this obj from being saved:
+  <ul>
+    <% @new_book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  <% end %>
  
 <div class="col-md-8 offset-md-1">
 <h2>Books</h2>
